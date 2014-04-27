@@ -3,8 +3,8 @@
     "description": "Skeleton Application for ZF2",
     "license": "BSD-3-Clause",
     "keywords": [
-        "framework",
-        "zf2"
+    "framework",
+    "zf2"
     ],
     "homepage": "http://framework.zend.com/",
     "require": {
@@ -12,6 +12,8 @@
         "zendframework/zendframework": "2.3.*",
         "doctrine/doctrine-orm-module": "*",        
         "doctrine/orm": "*",
-        "doctrine/common": "*"  
+        "doctrine/common": "*"  ,
+        "neilime/zf2-twb-bundle": "2.*@stable",
+        "zendframework/zftool": "dev-master"        
     }
 }
