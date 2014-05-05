@@ -9,20 +9,22 @@ return array(
     'controllers' => array(
         'invokables' => array(
             'Almaks\Controller\Index' => 'Almaks\Controller\IndexController',
+            'Almaks\Controller\ContactUs' => 'Almaks\Controller\ContactUsController',
         ),
     ),
     'router' => array(
         'routes' => array(
-            'sayhello' => array(
-                'type' => 'Zend\Mvc\Router\Http\Literal',
+            'contact' => array(
+                'type' => 'Literal',
                 'options' => array(
-                    'route' => '/almaks',
+                    'route' => '/almaks/contact-us',
                     'defaults' => array(
-                        'controller' => 'Almaks\Controller\Index',
+                        '__NAMESPACE__' => 'Almaks\Controller',
+                        'controller' => 'ContactUs',
                         'action' => 'index',
-                    )
-                )
-            )
-        )
+                    ),
+                ),
+            ),
+        ),
     ),
 );
