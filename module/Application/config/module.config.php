@@ -102,7 +102,6 @@ return array(
     'controllers' => array(
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController',
-            'Almaks\Controller\ContactUs' => 'Almaks\Controller\ContactUsController'
         ),
     ),
     'view_manager' => array(
