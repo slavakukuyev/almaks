@@ -15,31 +15,7 @@ return array(
     ),
     'router' => array(
         'routes' => array(
-            'contact' => array(
-                'type' => 'Literal',
-                'options' => array(
-                    'route' => '/almaks/contact-us',
-                    'defaults' => array(
-                        '__NAMESPACE__' => 'Almaks\Controller',
-                        'controller' => 'ContactUs',
-                        'action' => 'index',
-                    ),
-                ),
-            ),
-            
-            'projects' => array(
-                'type' => 'Literal',
-                'options' => array(
-                    'route' => '/almaks/projects',
-                    'defaults' => array(
-                        '__NAMESPACE__' => 'Almaks\Controller',
-                        'controller' => 'Projects',
-                        'action' => 'index',
-                    ),
-                ),
-            ),
-            
-                 'almaks' => array(
+            'almaks' => array(
                 'type' => 'Literal',
                 'options' => array(
                     'route' => '/almaks',
@@ -63,9 +39,30 @@ return array(
                             'defaults' => array(),
                         ),
                     ),
+                    'contact-us' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route' => '/almaks/contact-us',
+                            'defaults' => array(
+                                '__NAMESPACE__' => 'Almaks\Controller',
+                                'controller' => 'ContactUs',
+                                'action' => 'index',
+                            ),
+                        ),
+                    ),
+                    'projects' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route' => '/almaks/projects',
+                            'defaults' => array(
+                                '__NAMESPACE__' => 'Almaks\Controller',
+                                'controller' => 'Projects',
+                                'action' => 'index',
+                            ),
+                        ),
+                    ),
                 ),
             ),
-            
         ),
     ),
 );

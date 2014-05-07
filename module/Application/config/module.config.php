@@ -24,7 +24,7 @@ return array(
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them
             // using the path /application/:controller/:action
-            'application' => array(
+                        'application' => array(
                 'type' => 'Literal',
                 'options' => array(
                     'route' => '/application',
@@ -50,34 +50,6 @@ return array(
                     ),
                 ),
             ),
-                        'almaks' => array(
-                'type' => 'Literal',
-                'options' => array(
-                    'route' => '/almaks',
-                    'defaults' => array(
-                        '__NAMESPACE__' => 'Almaks\Controller',
-                        'controller' => 'Index',
-                        'action' => 'index',
-                    ),
-                ),
-                'may_terminate' => true,
-                'child_routes' => array(
-                    'default' => array(
-                        'type' => 'Segment',
-                        'options' => array(
-                            'route' => '/[:controller[/:action[/:id]]]',
-                            'constraints' => array(
-                                'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                                'id' => '[0-9]*',
-                            ),
-                            'defaults' => array(),
-                        ),
-                    ),
-                ),
-            ),
-            
-            
         ),
     ),
     'service_manager' => array(
@@ -102,6 +74,9 @@ return array(
     'controllers' => array(
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController',
+            'Application\Controller\ContactUs' => 'Application\Controller\ContactUsController',
+            'Application\Controller\Projects' => 'Application\Controller\ProjectsController',
+            'Application\Controller\About' => 'Application\Controller\AboutController',
         ),
     ),
     'view_manager' => array(

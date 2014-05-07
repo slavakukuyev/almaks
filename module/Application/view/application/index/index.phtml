@@ -16,7 +16,7 @@
                 <p>
                     <?php echo $this->translate('Компания ООО "АлМаксСтрой" уже более десяти лет на рынке строительства. На сегодняшний день в нашей компании работает более семидесяти высококвалифицированных специалистов.'); ?>
                 </p>
-                <p><a class="btn btn-success pull-right" href="http://framework.zend.com/zf2" target="_blank"><?php echo $this->translate('ZF2 Development Portal') ?> &raquo;</a></p>
+                <p><a class="btn btn-success pull-right" href="<?php echo $this->url('application/default', array('controller' => 'about', 'action' => 'index')) ?>" target="_blank"><?php echo $this->translate('Наша компания') ?> &raquo;</a></p>
             </div>
         </div>
     </div>
@@ -30,12 +30,12 @@
                     <img class="img-rounded" src="/img/main/panels.png"/>
                 </div>
                 <br/>
-                <p><?php echo $this->translate('Основные виды деятельности нашей компании:<br/>'); ?>
+                <p><?php echo $this->translate('Основные виды деятельности нашей компании:<br/><br/>'); ?>
                     <span class="badge">!</span> <?php echo $this->translate('монтаж сэндвич панелей'); ?><br/>
                     <span class="badge">!</span> <?php echo $this->translate('монтаж металлоконструкций'); ?><br/>
                     <span class="badge">!</span> <?php echo $this->translate('электромонтажные работы'); ?><br/>
                 </p>
-                <p><a class="btn btn-success pull-right" href="<?php echo $this->url('projects') ?>" target="_blank"><?php echo $this->translate('Our Projects') ?> &raquo;</a></p>
+                <p><a class="btn btn-success pull-right" href="<?php echo $this->url('application/default', array('controller' => 'projects', 'action' => 'index')) ?>" target="_blank"><?php echo $this->translate('Наши Проекты') ?> &raquo;</a></p>
             </div>
         </div>
     </div>
@@ -48,18 +48,25 @@
                 <div class="panel-body-image">
                     <img class="img-rounded" src="/img/main/contactus.jpg"/>
                 </div>  <br/>
-                <p>«АлМаксСтрой»<br/>
-                    Adress:<br/>
-                    214036 г. Смоленск <br/>ул. Смольянинова д.15 офис 405<br/><br>
-                    Phones:<br/>
-                    +7 909 5818067<br/>
-                    +375 29 5126629<br/>
-                    +375 29 7119193<br/><br/>
-                    Contact E-mails:<br/>
-                    <a href="mailto:almaksstroy@inbox.ru">almaksstroy@inbox.ru</a><br/>
-                    <a href="mailto:maxmontag@mail.ru">maxmontag@mail.ru<br/>
-                </p>
-                <p><a class="btn btn-success pull-right" href="<?php echo $this->url('contact') ?>"><?php echo $this->translate('We contact with you') ?> &raquo;</a></p>
+                <address style="float:left;">
+                    <strong>Контактные тел.</strong><br>  
+                    <abbr title="Phone">RUS:</abbr>+7(909) 5818067<br/>
+                    <abbr title="Phone">BLR:</abbr>+375(29) 5126629<br/>
+                    <abbr title="Phone">BLR:</abbr>+375(29) 7119193<br/><br/>
+
+                </address>
+
+                <address style="float:right;">
+                    <strong>E-mail:</strong><br>
+                    <a href="mailto:#">almaksstroy@inbox.ru</a><br>
+                    <a href="mailto:#"> maxmontag@mail.ru</a><br>
+                    <a href="mailto:#">almaksstroy@mail.ru</a><br>
+
+                </address>
+
+
+
+                <p><a class="btn btn-success pull-right" href="<?php echo $this->url('application/default', array('controller' => 'contact-us', 'action' => 'index')) ?>"><?php echo $this->translate('Ваши условия - наша ответственность') ?> &raquo;</a></p>
             </div>
         </div>
     </div>
