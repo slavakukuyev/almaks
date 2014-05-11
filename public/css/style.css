@@ -66,10 +66,13 @@ div.container a.brand {
     background: url('/img/main/pageglare.png') no-repeat 0 0;    
 }
 
-footer p{
+footer p, .container{
     color: #a99a99;
 }
 
 .panel-body-image{
  text-align: center;   
+}
+.form-control{
+background-color:#E1E1E1
 }

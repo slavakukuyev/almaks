@@ -1,2 +1,64 @@
- Adress:<br/>
-                    214036 г. Смоленск <br/>ул. Смольянинова д.15 офис 405<br/><br>
+<h3>Contact Us</h3>
+<?php
+$form = $this->form;
+$form->setAttributes(array('action' => $this->url('application/default', array('controller' => 'contact-us', 'action' => 'index')),
+    'role'=>'form',
+    'class'=> 'form-horizontal'
+        ));
+$form->prepare();
+echo $this->form()->openTag($form);
+echo '<div class="form-group">';
+echo $this->formLabel($form->get('fullname'));
+echo '<div class="col-sm-10">';
+echo $this->formElement($form->get('fullname'));
+echo '</div>';echo '</div>';
+
+echo '<div class="form-group">';
+echo $this->formLabel($form->get('email'));
+echo '<div class="col-sm-10">';
+echo $this->formElement($form->get('email'));
+echo '</div>';
+echo '</div>';
+
+echo '<div class="form-group">';
+echo $this->formLabel($form->get('paragraph'));
+echo '<div class="col-sm-10">';
+echo $this->formElement($form->get('paragraph'));
+echo '</div>';echo '</div>';
+
+
+  
+
+echo '<div class="form-group">';
+    echo '<div class="col-sm-offset-2 col-sm-10">';
+      echo $this->formSubmit($form->get('submit'));
+    echo '</div>';
+  echo '</div>';
+
+echo $this->form()->closeTag();
+echo "<hr>";
+?>
+
+ 
+<address>
+  <strong>Address:</strong><br>
+214036 г.Смоленск<br>
+ул. Смольянинова д.15 офис 405<br>
+<strong>AlmAksStroi LTD</strong>
+</address>
+
+<address>
+                    <strong>Контактные тел.</strong><br>  
+                    <abbr title="Phone">RUS:</abbr>+7(909) 5818067<br>
+                    <abbr title="Phone">BLR:</abbr>+375(29) 5126629<br>
+                    <abbr title="Phone">BLR:</abbr>+375(29) 7119193<br><br>
+
+                </address>
+
+<address>
+                    <strong>E-mail:</strong><br>
+                    <a href="mailto:#">almaksstroy@inbox.ru</a><br>
+                    <a href="mailto:#"> maxmontag@mail.ru</a><br>
+                    <a href="mailto:#">almaksstroy@gmail.com</a><br>
+
+                </address>

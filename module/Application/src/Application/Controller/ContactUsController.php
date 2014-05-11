@@ -4,35 +4,33 @@ namespace Application\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
-use Application\Form\ContactForm; 
-use Application\Form\ContactValidator; 
+use Application\Form\ContactForm;
+use Application\Form\ContactValidator;
 
-class ContactUsController extends AbstractActionController
-{
-    public function indexAction()
-    {
-        $form = new ContactForm(); 
-    $request = $this->getRequest(); 
+class ContactUsController extends AbstractActionController {
 
-    if($request->isPost()) 
-    { 
-        $user = new (); 
-        
-        $formValidator = new ContactValidator(); 
-        { 
-            $form->setInputFilter($formValidator->getInputFilter()); 
-            $form->setData($request->getPost()); 
-        } 
-         
-        if($form->isValid()){ 
-        { 
-            $user->exchangeArray($form->getData()); 
-        } 
-    } 
-    
-    
+    public function indexAction() {
+        $form = new ContactForm();
+        $request = $this->getRequest();
+
+        if ($request->isPost()) {
+
+            $formValidator = new ContactValidator(); {
+                $form->setInputFilter($formValidator->getInputFilter());
+                $form->setData($request->getPost());
+            }
+
+            if ($form->isValid()) { {
+                  echo  var_dump($form->getData());
+                }
+            }
+
+
+            
+        }
         return new ViewModel(array('form' => $form));
     }
+
 }
 
 ?>

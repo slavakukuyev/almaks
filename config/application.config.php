@@ -10,8 +10,7 @@ return array(
         'Application',
         'DoctrineModule',
         'DoctrineORMModule',
-        'TwbBundle',
-        'Almaks'
+        'TwbBundle'    
     ),
     'module_listener_options' => array(
         'module_paths' => array(
