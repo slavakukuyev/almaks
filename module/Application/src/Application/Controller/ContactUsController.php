@@ -15,20 +15,24 @@ class ContactUsController extends AbstractActionController {
 
         if ($request->isPost()) {
 
-            $formValidator = new ContactValidator(); {
+            $formValidator = new ContactValidator(); 
+            {
                 $form->setInputFilter($formValidator->getInputFilter());
                 $form->setData($request->getPost());
             }
 
             if ($form->isValid()) { {
-                  echo  var_dump($form->getData());
+                 $message=var_dump($form->getData());
                 }
             }
-
-
+ $message="POST";
+            
             
         }
+        if (!isset($message))
         return new ViewModel(array('form' => $form));
+        else
+        return new ViewModel(array('message' => $message));            
     }
 
 }
