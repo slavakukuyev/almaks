@@ -10,10 +10,7 @@ use Zend\InputFilter\InputFilterInterface;
 class ContactValidator implements InputFilterAwareInterface {
 
     protected $inputFilter;
-
-    public function setInputFilter(InputFilterInterface $inputFilter) {
-        throw new \Exception("Not used");
-    }
+   
 
     public function getInputFilter() {
         if (!$this->inputFilter) {
@@ -89,6 +86,10 @@ class ContactValidator implements InputFilterAwareInterface {
         }
 
         return $this->inputFilter;
+    }
+
+    public function setInputFilter(InputFilterInterface $inputFilter) {
+        
     }
 
 }

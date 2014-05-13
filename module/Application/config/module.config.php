@@ -1,12 +1,5 @@
 <?php
 
-/**
- * Zend Framework (http://framework.zend.com/)
- *
- * @link      http://github.com/zendframework/ZendSkeletonApplication for the canonical source repository
- * @copyright Copyright (c) 2005-2014 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd New BSD License
- */
 return array(
     'router' => array(
         'routes' => array(
@@ -20,10 +13,6 @@ return array(
                     ),
                 ),
             ),
-            // The following is a route to simplify getting started creating
-            // new controllers and actions without needing to create a new
-            // module. Simply drop new controllers in, and you can access them
-            // using the path /application/:controller/:action
             'application' => array(
                 'type' => 'Literal',
                 'options' => array(
@@ -39,10 +28,11 @@ return array(
                     'default' => array(
                         'type' => 'Segment',
                         'options' => array(
-                            'route' => '/[:controller[/:action]]',
+                            'route' => '/[:controller[/:action[/:id]]]',
                             'constraints' => array(
                                 'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
                                 'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id' => '[0-9]*',
                             ),
                             'defaults' => array(
                             ),
@@ -101,5 +91,36 @@ return array(
             'routes' => array(
             ),
         ),
+    ),
+    'doctrine' => array(
+        'authentication' => array(// this part is for the Auth adapter from DoctrineModule/Authentication
+            'orm_default' => array(
+                'object_manager' => 'Doctrine\ORM\EntityManager',
+                'identity_class' => 'Application\Entity\User',
+                'identity_property' => 'email',
+                'credential_property' => 'password',
+                'credential_callable' => function(Entity\User $user, $passwordGiven) {
+                    if ($user->password === md5($user->email . $passwordGiven . $user->registered) && $user->enabled == 1) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                },
+            ),
+        ),
+        'driver' => array(
+            __NAMESPACE__ . '_driver' => array(
+                'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
+                'cache' => 'array',
+                'paths' => array(
+                    __DIR__ . '/../src/' . __NAMESPACE__ . '/Entity',
+                ),
+            ),
+            'orm_default' => array(
+                'drivers' => array(
+                    __NAMESPACE__ . '\Entity' => __NAMESPACE__ . '_driver',
+                )
+            )
+        )
     ),
 );
